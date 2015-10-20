@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 
 class TapeEquilibrium {
 
-    public int solution(int[] A) {
+    int solution(int[] A) {
         List<Integer> input = IntStream.of(A).boxed().collect(Collectors.toList());
 
         int ans = Integer.MAX_VALUE;
