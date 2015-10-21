@@ -8,8 +8,8 @@ public class CommonPrimeDivisors {
     int solution(int[] A, int[] B) {
         int result = 0;
         for (int i = 0; i < A.length; i++) {
-            List<Integer> set1 = primeFactors(A[i]);
-            List<Integer> set2 = primeFactors(B[i]);
+            Set<Integer> set1 = new HashSet<>(primeFactors(A[i]));
+            Set<Integer> set2 = new HashSet<>(primeFactors(B[i]));
 
             Set<Integer> set = new HashSet<>();
             set.addAll(set1);
