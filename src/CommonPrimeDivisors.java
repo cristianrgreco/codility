@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class CommonPrimeDivisors {
 
@@ -9,10 +11,13 @@ public class CommonPrimeDivisors {
             List<Integer> set1 = primeFactors(A[i]);
             List<Integer> set2 = primeFactors(B[i]);
 
+            Set<Integer> set = new HashSet<>();
+            set.addAll(set1);
+            set.addAll(set2);
+
             if (set1.size() == 0 && set2.size() == 0) {
                 result++;
-            } else if (set1.stream().distinct().allMatch(set2::contains) &&
-                    set2.stream().distinct().allMatch(set1::contains)) {
+            } else if (set1.containsAll(set) && set2.containsAll(set)) {
                 result++;
             }
         }
